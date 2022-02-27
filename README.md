@@ -6,6 +6,10 @@ Bloom filters are a probabilistic data structure that are used to determine if a
 
 Bloom filters do not store the elements themselves, and it is impossible to "remove" an element from a standard Bloom filter. Removing an element from a Bloom filter could result in the filter thinking that other elements (other than the one that was removed) had also been removed from the filter. Modifications on the Bloom filter, such as the Counting Bloom filter, do allow for removing elements, but at the cost of space.
 
+Knowing the number of elements expected to be in the data set (n), and the desired false positive probability rate (p), the size of a Bloom filter's bitarray (m) and the optimal number of hash functions (k) can be calculated using the following formulas:
+- m = -(n log(p)) / (log(2)^2)
+- k = (m/n)log(2)
+
 ## About This Project
 I was learning about Bloom filters and their uses and wanted to try implementing one of my own. I am still brushing up on my Python, so I chose that as my language.
 
